@@ -14,7 +14,7 @@ public class UserController {
     private UserRepo repo;
     @PostMapping("/login")
     public ResponseEntity<?> loginUer(@RequestBody User userData) {
-        User user =repo.findByUserId(userData.getCin());
+        User user =repo.findByCin(userData.getCin());
         if (user.getPassword().equals(userData.getPassword()))
             return ResponseEntity.ok(user);
         return (ResponseEntity<?> ) ResponseEntity.internalServerError();

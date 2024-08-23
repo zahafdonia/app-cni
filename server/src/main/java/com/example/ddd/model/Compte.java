@@ -3,58 +3,61 @@ package com.example.ddd.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "compte",uniqueConstraints = {
+@Table(name = "comptes", uniqueConstraints = {
         @UniqueConstraint(columnNames = "email")
 })
 public class Compte {
 
     @Id
+    @Column(name = "cin")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cin;
 
-    @Column(nullable = false, unique = false)
+    @Column(name = "nom")
     private String nom;
 
-    @Column(nullable = false,unique = false)
+    @Column(name = "prenom")
     private String prenom;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "email", unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column(name = "password")
     private String password;
 
     // Getters and Setters
 
-    public Long getId() {
+    public Long getCin() {
         return cin;
     }
 
-    public void setId(Long cin) {
+    public void setCin(Long cin) {
         this.cin = cin;
     }
 
     public String getNom() {
         return nom;
     }
-    public String getPrenom() {
-        return prenom;
-    }
-    public String getEmail() {
-        return email;
-    }
-
 
     public void setNom(String nom) {
         this.nom = nom;
     }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
-
 
     public String getPassword() {
         return password;
