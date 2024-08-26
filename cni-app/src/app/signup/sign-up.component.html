@@ -1,0 +1,32 @@
+<div class="container col-md-6" style="margin-top: 50px;">
+    <h3 style="color: rgb(78, 78, 203);">Inscription</h3>
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="cin" class="form-label">Numéro de carte d'identité</label>
+        <input type="text" [(ngModel)]="user.cin" class="form-control" id="cin" name="cin" placeholder="********">
+      </div>
+  
+      <div class="mb-3">
+        <label for="nom" class="form-label">Nom</label>
+        <input type="text" [(ngModel)]="user.nom" class="form-control" id="nom" name="nom" placeholder="Nom">
+      </div>
+  
+      <div class="mb-3">
+        <label for="prenom" class="form-label">Prénom</label>
+        <input type="text" [(ngModel)]="user.prenom" class="form-control" id="prenom" name="prenom" placeholder="Prénom">
+      </div>
+  
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" [(ngModel)]="user.email" class="form-control" id="email" name="email" placeholder="email@example.com">
+      </div>
+  
+      <div class="mb-3">
+        <label for="password" class="form-label">Mot de passe</label>
+        <input type="password" [(ngModel)]="user.password" class="form-control" id="password" name="password" placeholder="**********">
+      </div>
+  
+      <button type="submit" class="btn btn-info">S'inscrire</button>
+    </form>
+  </div>
+  
